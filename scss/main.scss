@@ -1,0 +1,97 @@
+@import 'reset';
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing:inherit
+}
+
+body {
+    background-color: #F3ECE0;
+}
+
+
+.board {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    .left, .right {
+        width: 160px;
+        height: 240px;
+        border: 4px solid #979797;
+    }
+
+    .left {
+        order: 1;
+        grid-row: 1/1;
+        grid-column: 1/2;
+        border-left: none;
+    }
+
+    .right {
+        order: 3;
+        grid-row: 1/1;
+        grid-column: 3/4;
+        border-right: none;
+    }
+
+    .me {
+        order: 2;
+        grid-row: 1/1;
+        grid-column: 2/3;
+
+        .hand {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+
+            .card-wrapper {
+                margin-right: 8px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                .card {
+                    width: 104px;
+                    height: 240px;
+                    border: 8px solid black;
+                    border-radius: 8px;
+                    background-color: #fff;
+
+                    &.mat-1 {
+                        border-color: #8C6339;
+                    }
+
+                    &.mat-2 {
+                        border-color: #9A9A9A;
+                    }
+
+                    &.commercial {
+                        border-color: #FBBD28;
+                    }
+
+                    &.guild {
+                        border-color: #86338C;
+                    }
+
+                    &.civil {
+                        border-color: #23A8E1;
+                    }
+
+                    &.scient {
+                        border-color: #059347;
+                    }
+
+                    &.military {
+                        border-color: #ED1B22;
+                    }
+                }
+            }
+        }
+    }
+
+}
